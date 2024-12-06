@@ -1,0 +1,25 @@
+<div>
+    <table>
+      <!-- Encabezados de la tabla -->
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Fecha en que estuvo al aire</th>
+          <th>Episode</th>
+          <th>Ver Personajes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filas dinámicas con los datos -->
+        <tr *ngFor="let episode of episodes">
+          <td>{{ episode.name }}</td>
+          <td>{{ episode.air_date }}</td>
+          <td>{{ episode.episode }}</td>
+          <td>
+            <button (click)="viewCharacters(episode.characters)">Ver Personajes</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
