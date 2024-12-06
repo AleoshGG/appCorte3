@@ -13,8 +13,6 @@ import { CardsComponent } from './characters/cards/cards.component';
   declarations: [
     AppComponent,
     EpisodesComponent,
-    ViewCardsComponent,
-    CardsComponent
   ],
   imports: [
     BrowserModule,
