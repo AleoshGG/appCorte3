@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { iCharacter } from '../../models/iCharacter';
 import { CharactersService } from '../../services/characters.service';
 
@@ -8,6 +8,8 @@ import { CharactersService } from '../../services/characters.service';
   styleUrl: './cards.component.css',
 })
 export class CardsComponent implements OnInit {
+  @Input({ required: true }) id: number = 0;
+
   character: iCharacter = {
     id: 0,
     name: '',
@@ -24,7 +26,7 @@ export class CardsComponent implements OnInit {
   constructor(private _charactersS: CharactersService) {}
 
   ngOnInit(): void {
-    this._charactersS.getSingleCharacter(2).subscribe({
+    this._charactersS.getSingleCharacter(this.id).subscribe({
       next: (response) => {
         this.character = response;
       },
@@ -33,5 +35,4 @@ export class CardsComponent implements OnInit {
       },
     });
   }
-  
 }
