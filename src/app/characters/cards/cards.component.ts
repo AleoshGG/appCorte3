@@ -17,9 +17,9 @@ export class CardsComponent implements OnInit {
     species: '',
     gender: '',
     image: '',
-    location: {
+    origin: {
       name: '',
-      URL: '',
+      url: '',
     },
   };
 
@@ -34,5 +34,31 @@ export class CardsComponent implements OnInit {
         console.log(err);
       },
     });
+  }
+
+  isModalOpen = false;
+  originId: number | null = null;
+
+  viewLocation(originURL: string): void {
+    const id = this.getIdFromUrl(originURL);
+    if (id) {
+      this.originId = id; // Almacena el ID del origen
+      this.isModalOpen = true; // Abre el modal
+    }
+  }
+
+  onModalConfirm(): void {
+    this.isModalOpen = false;
+  }
+
+  onModalCancel(): void {
+    this.isModalOpen = false;
+  }
+
+  private getIdFromUrl(url: string): number {
+    // Usa una expresión regular para capturar el último número de la URL
+    const match = url.match(/\/(\d+)$/);
+    // Devuelve el número como un entero o lanza un error si no se encuentra
+    return match ? parseInt(match[1], 10) : NaN;
   }
 }
