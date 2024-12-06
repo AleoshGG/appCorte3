@@ -1,26 +1,34 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; // Importar Router
+import { EpisodesService } from '../../services/episodes.service';
 import { IEpisode } from '../../models/iepisode';
-import { EpisodesService } from '../../services/episodes.service'
 
 @Component({
   selector: 'app-episodes',
   templateUrl: './episodes.component.html',
-  styleUrl: './episodes.component.css'
+  styleUrls: ['./episodes.component.css']
 })
 export class EpisodesComponent {
-
-
-  episodes: IEpisode[] = []; // Arreglo para almacenar los episodios 
+  episodes: IEpisode[] = []; 
 
   constructor(
-    private episode: EpisodesService) {}
+    private episodeService: EpisodesService,
+    private router: Router 
+  ) {}
 
-    ngOnInit(): void {
-      this.episode.getEpisode().subscribe(data => {
-        this.episodes = data.results;
-      });
-    }
+  ngOnInit(): void {
+    this.episodeService.getEpisode().subscribe(data => {
+      this.episodes = data.results;
+      console.log(data.results)
+    });
+  }
 
+  viewCharacters(characterUrls: string[]): void {
+    const characterIds = characterUrls.map(url => {
+      const urlParts = url.split('/');
+      return urlParts[urlParts.length - 1]; 
+    });
+
+    this.router.navigate(['/characters'], { queryParams: { ids: characterIds.join(',') } });
+  }
 }
-
-

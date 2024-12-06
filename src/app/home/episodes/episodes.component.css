@@ -11,9 +11,31 @@ table {
     border: 1px solid #969595;
     padding: 8px;
     color: aliceblue;
+    text-align: center;
+    vertical-align: middle;
   }
   
   th {
     background-color: #2f4762;
     font-weight: bold;
+  }
+
+  button {
+    object-position: center;
+    background-color: #2f4762; /* Verde principal */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Indicador de clic */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+  }
+  
+  button:hover {
+    background-color: #2f4762; /* Verde más oscuro al pasar el mouse */
+  }
+  
+  button:active {
+    background-color: #436892; /* Verde aún más oscuro al hacer clic */
   }
