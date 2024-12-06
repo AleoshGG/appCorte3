@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IEpisode } from '../../models/iepisode';
-import { EpisodesService } from '../../service/episodes.service'
+import { EpisodesService } from '../../services/episodes.service'
 
 @Component({
   selector: 'app-episodes',
