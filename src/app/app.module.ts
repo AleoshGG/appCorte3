@@ -13,8 +13,6 @@ import { CardsComponent } from './characters/cards/cards.component';
   declarations: [
     AppComponent,
     EpisodesComponent,
-    ViewCardsComponent,
-    CardsComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +20,6 @@ import { CardsComponent } from './characters/cards/cards.component';
     CharactersModule,
     FormsModule,
     HttpClientModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent],

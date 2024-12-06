@@ -1,12 +1,12 @@
 export interface iCharacter {
   id: number;
-  name: String;
-  status: String;
-  species: String;
-  gender: String;
-  image: String;
-  location: {
-    name: String;
-    URL: String;
+  name: string;
+  status: string;
+  species: string;
+  gender: string;
+  image: string;
+  origin: {
+    name: string;
+    url: string;
   };
 }
