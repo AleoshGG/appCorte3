@@ -8,8 +8,7 @@ import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    CardsComponent,
-    ViewCardsComponent
+    
   ],
   imports: [
     CommonModule,
