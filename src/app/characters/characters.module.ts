@@ -14,7 +14,6 @@ import { ModalComponent } from './modal/modal.component';
   ],
   imports: [
     CommonModule,
-  
   ]
 })
 export class CharactersModule { }
